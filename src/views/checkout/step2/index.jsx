@@ -1,5 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable no-nested-ternary */
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Boundary } from '@/components/common';
 import { CHECKOUT_STEP_1, CHECKOUT_STEP_3 } from '@/constants/routes';
@@ -41,6 +39,11 @@ const FormSchema = Yup.object().shape({
 const ShippingDetails = ({ profile, shipping, subtotal }) => {
   useDocumentTitle('Check Out Step 2 | Samriddhi');
   useScrollTop();
+  
+  // Log the basket and subtotal to check for correct values
+  console.log("Basket in Step 2:", shipping);
+  console.log("Subtotal in Step 2:", subtotal);
+
   const dispatch = useDispatch();
   const history = useHistory();
 

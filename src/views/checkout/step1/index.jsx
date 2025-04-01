@@ -15,8 +15,16 @@ const OrderSummary = ({ basket, subtotal }) => {
   useScrollTop();
   const dispatch = useDispatch();
   const history = useHistory();
+  
+  // Log the basket and subtotal to check for correct values
+  console.log("Basket in Step 1:", basket);
+  console.log("Subtotal in Step 1:", subtotal);
+
   const onClickPrevious = () => history.push('/');
-  const onClickNext = () => history.push(CHECKOUT_STEP_2);
+  const onClickNext = () => {
+    console.log("Navigating to Step 2:", CHECKOUT_STEP_2);  // Add this log for debugging
+    history.push(CHECKOUT_STEP_2);
+  };
 
   return (
     <div className="checkout">
